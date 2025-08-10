@@ -25,7 +25,7 @@ const HowItWorks = () => (
     <h2 className="text-2xl font-bold text-center mb-8">How to ShareBite</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {steps.map(step => (
-        <div key={step.number} className="text-center border border-gray-500/30 rounded-3xl p-6 py-10">
+        <div key={step.number} className="text-center border bg-white dark:bg-gradient-to-tr from-[#18122B] to-[#393053] dark:bg-[#18122B] border-gray-500/10 rounded-3xl p-6 py-10">
           <div className={`text-5xl font-bold mb-2 ${step.color}`}>{step.number}</div>
           <h3 className="font-bold mb-2 py-3">{step.title}</h3>
           <p className="text-gray-600 dark:text-gray-300">{step.desc}</p>
