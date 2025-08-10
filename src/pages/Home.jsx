@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import Banner2 from "../components/Banner2";
 import FeaturedFoods from "../components/home/FeaturedFoods";
-import HowItWorks from "../components/home/HowItWorks";
+import HowItWorks from "@/components/home/HowItWorks";
 import ExtraSection2 from "../components/home/ExtraSection2";
 import ExtraSection1 from "../components/home/ExtraSection1";
 import Footer from "../components/Footer";

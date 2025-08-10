@@ -4,6 +4,7 @@ import { RiMenuAddLine } from "react-icons/ri";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../providers/AuthProvider";
 import ToggleLightDark from "./ui/ToggleLightDark";
+import HeaderLoading from "./loading/HeaderLoading";
 
 const menu = [
   { name: "Home", path: "/" },
@@ -31,8 +32,8 @@ const Header = () => {
   }, []);
 
   if (loading) {
-    return <div className="w-10 h-10 rounded-full bg-gray-200 animate-pulse" />;
-  }
+    return  <HeaderLoading/>  
+     }
 
   return (
     <nav className="bg-white dark:bg-[#18122B] shadow-md sticky top-0 z-50 transition-colors duration-300">
