@@ -4,7 +4,7 @@
 
 **ShareBite Client** is the frontend application for the ShareBite community food sharing and surplus reduction platform. Built with React, Tailwind CSS, and Firebase Authentication, this modern, responsive web app empowers users to donate, request, and manage surplus food, helping to reduce waste and support local communities.
 
-#### **Live Frontend URL**: [https://share-bite.web.app](https://share-bite.web.app)
+#### **Live Frontend URL**: [https://flow-better.web.app/](https://flow-better.web.app/)
 
 #### **Live API URL**: [https://sharebite-server.vercel.app](https://sharebite-server.vercel.app)
 
