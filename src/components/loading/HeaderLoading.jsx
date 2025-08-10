@@ -4,7 +4,7 @@ const HeaderLoading = () => {
     return (
             <nav className="bg-white dark:bg-[#18122B] shadow-md sticky top-0 z-50 transition-colors duration-300">
                 {/* Skeleton Welcome Banner */}
-                <div className="h-8 max-w-xs mx-auto my-2 rounded-full bg-gradient-to-r from-orange-400 to-pink-500 animate-pulse" />
+                {/* <div className="h-8 max-w-xs mx-auto my-2 rounded-full bg-gradient-to-r from-orange-400 to-pink-500 animate-pulse" /> */}
 
                 <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center relative">
 
