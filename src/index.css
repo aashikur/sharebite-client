@@ -1,0 +1,18 @@
+@import "tailwindcss";
+ @plugin "daisyui" {
+ themes: light --default, dark --prefersdark;
+ }
+ @custom-variant dark (&:where([data-theme=dark ], [data-theme=dark] *));
+
+
+.active {
+    @apply bg-orange-400 text-white;
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient-x {
+  animation: gradient-x 2s linear infinite;
+}
