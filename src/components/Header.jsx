@@ -8,6 +8,8 @@ import HeaderLoading from "./loading/HeaderLoading";
 
 const menu = [
   { name: "Home", path: "/" },
+  // { name: "Recent Added", path: "/foods" },
+  // { name: "Apps", path: "/foods" },
   { name: "Available Foods", path: "/foods" },
   { name: "Add Food", path: "/add-food", private: true },
   { name: "Manage My Foods", path: "/manage-foods", private: true },
