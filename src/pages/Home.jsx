@@ -9,6 +9,8 @@ import Photo_Gallery from "../components/ui/Photo_Gallery";
 import OurApps from "../components/home/OurApps";
 import Loading from "./Loading";
 import CustomerReview from "../test/CustomerReview";
+import Dropdown from "@/components/ui/DropDown";
+import Pricing2 from "@/components/ui/PricingTable";
 
 const Home = () => {
 
@@ -31,9 +33,11 @@ const Home = () => {
         </h2>
       </section> */}
 
+      {/* <Dropdown/> */}
+
       {/* Featured Foods */}
       <FeaturedFoods />
-      <OurApps/>
+      <OurApps/> 
 
       {/* How It Works */}
       <HowItWorks />
@@ -42,6 +46,7 @@ const Home = () => {
       {/* Extra Sections */}
       <ExtraSection2 />
       <ExtraSection1 />
+      <Pricing2/>
 
       <CustomerReview/>
 
