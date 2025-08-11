@@ -15,6 +15,7 @@ import Profile from "../pages/Profiles";
 import TestProfile from "../test/TestProfile";
 import CustomerReview from "../test/CustomerReview";
 import Review from "../test/Review";
+import Contact from "@/pages/fronted/contact/Contact";
 
 const mainRoutes = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const mainRoutes = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "foods", element: <Foods /> },
+      { path: "contact", element: <Contact /> },
       { path: "foods/:id", element:<PrivateRoute><FoodDetails /></PrivateRoute> },
       { path: "add-food", element: <PrivateRoute><AddFood /></PrivateRoute> },
       { path: "manage-foods", element: <PrivateRoute><ManageFoods /></PrivateRoute> },
@@ -31,6 +33,10 @@ const mainRoutes = createBrowserRouter([
       { path: "registration", element: <Register /> },
       { path: "profile", element: <PrivateRoute><Profile /></PrivateRoute> },
       { path: "login", element: <Login /> },
+
+
+
+
       { path: "TestProfile", element: <TestProfile /> },
       { path: "rrr", element: <Review /> },
     ],
