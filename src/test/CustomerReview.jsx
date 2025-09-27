@@ -3,26 +3,26 @@ import { FaStar } from "react-icons/fa";
 
 const reviews = [
   {
-    name: "Alice Johnson",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Moumita Chakraborty",
+    avatar: "https://avatars.githubusercontent.com/u/193273269?v=4",
     rating: 5,
     text: "ShareBite made it so easy to share my extra food. The community is amazing and the app is super user-friendly!",
   },
   {
-    name: "Rahim Uddin",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    name: "Ashik Ahmed",
+    avatar: "https://avatars.githubusercontent.com/u/46211523?v=4",
     rating: 4,
     text: "I love how I can help my neighbors and reduce waste. The pickup process is smooth and safe.",
   },
   {
-    name: "Sadia Akter",
-    avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+    name: "RIfat Hossain",
+    avatar: "https://avatars.githubusercontent.com/u/158074608?v=4",
     rating: 5,
     text: "The best food sharing platform! I’ve met so many kind people and saved money too.",
   },
   {
-    name: "John Smith",
-    avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+    name: "Rikon Chowdhury",
+    avatar: "https://avatars.githubusercontent.com/u/163644418?v=4",
     rating: 4,
     text: "Great app, great mission. The design is beautiful and it works perfectly on my phone.",
   },

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { MdViewModule, MdViewAgenda } from "react-icons/md";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion  } from "framer-motion";
 import { ArrowBigRight } from "lucide-react";
 
 const cardVariants = {
@@ -13,6 +13,8 @@ const cardVariants = {
     y: 0,
     transition: { delay: i * 0.12, duration: 0.5, type: "spring" }
   }),
+  
+
 };
 
 const FeaturedFoods = () => {
@@ -83,8 +85,11 @@ const FeaturedFoods = () => {
               key={food._id}
               custom={i}
               variants={cardVariants}
+               whileHover={{ scale: 1.05 }}
               initial="hidden"
-              animate="visible"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+
               className="bg-white dark:bg-[#393053] rounded-3xl shadow-lg p-6 text-center"
             >
               <img

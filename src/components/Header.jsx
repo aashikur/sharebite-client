@@ -14,6 +14,7 @@ const menu = [
   { name: "Manage My Foods", path: "/manage-foods", private: true },
   { name: "My Food Requests", path: "/my-requests", private: true },
   { name: "Contact", path: "/contact" },
+  { name: "Contributor", path: "/contributor" },
 ];
 
 const Header = () => {

@@ -16,6 +16,7 @@ import TestProfile from "../test/TestProfile";
 import CustomerReview from "../test/CustomerReview";
 import Review from "../test/Review";
 import Contact from "@/pages/fronted/contact/Contact";
+import PortfolioGrid from "@/pages/PortfolioGrid";
 
 const mainRoutes = createBrowserRouter([
   {
@@ -31,6 +32,7 @@ const mainRoutes = createBrowserRouter([
       { path: "manage-foods", element: <PrivateRoute><ManageFoods /></PrivateRoute> },
       { path: "my-requests", element: <PrivateRoute><MyRequests /></PrivateRoute> },
       { path: "registration", element: <Register /> },
+      { path: "contributor", element: <PortfolioGrid /> },
       { path: "profile", element: <PrivateRoute><Profile /></PrivateRoute> },
       { path: "login", element: <Login /> },
 
