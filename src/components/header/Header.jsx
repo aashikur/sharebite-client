@@ -2,9 +2,9 @@ import { useContext, useState, useRef, useEffect } from "react";
 import { CgMenuMotion } from "react-icons/cg";
 import { RiMenuAddLine } from "react-icons/ri";
 import { Link, NavLink } from "react-router";
-import { AuthContext } from "../providers/AuthProvider";
-import ToggleLightDark from "./ui/ToggleLightDark";
-import HeaderLoading from "./loading/HeaderLoading";
+import { AuthContext } from "../../providers/AuthProvider";
+import ToggleLightDark from "../ui/ToggleLightDark";
+import HeaderLoading from "../loading/HeaderLoading";
 
 const menu = [
   { name: "Home", path: "/" },
