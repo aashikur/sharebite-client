@@ -31,6 +31,8 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const profileRef = useRef();
+  const dropdownRef = useRef();
+  const [isOpenDropDown, setIsOpenDropDown] = useState(false);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -46,16 +48,17 @@ const Header = () => {
   if (loading) {
     return <HeaderLoading />
   }
+  console.log('Server : ', import.meta.env.VITE_BASE_URL)
 
   return (
     <nav className="bg-white dark:bg-[#18122B] shadow-md sticky top-0 z-50 transition-colors duration-300">
       {user && (
-        <p className="hidden text-center text-white bg-gradient-to-r from-orange-500 to-pink-500 py-2">
+        <p className="block md:hidden text-center text-sm text-white bg-gradient-to-r from-orange-500 to-pink-500 py-1">
           Welcome, {user?.displayName || user?.name || "User"}!
         </p>
       )}
       {/* First nav col  */}
-      <div className="max-w-6xl mx-auto px-4 py-2 flex justify-between items-center relative">
+      <div className="container mx-auto px-4 py-2 flex justify-between items-center relative">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <img src="/logo.png" alt="ShareBite Logo" className="w-10 h-10 rounded-full shadow" />
@@ -65,7 +68,7 @@ const Header = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center gap-6">
+        <ul className="hidden md:flex items-center gap-6">
 
           <li>
             <Search className="w-5 h-5 text-[#18122B] dark:text-white" />
@@ -162,7 +165,7 @@ const Header = () => {
         </ul>
 
         {/* Mobile Menu Button */}
-        <div className="lg:hidden flex items-center">
+        <div className="md:hidden flex items-center">
           <ToggleLightDark />
           {!isMenuOpen ? (
             <RiMenuAddLine
@@ -260,10 +263,10 @@ const Header = () => {
 
 
       {/* First nav col  */}
-      <div className="max-w-6xl mx-auto px-4 py-2 flex justify-between items-center relative">
+      <div className="container mx-auto px-4 py-2 hidden md:flex justify-between items-center relative">
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center gap-4">
+        <ul className="flex items-center gap-4">
           {menu.map(
             (item) =>
               (!item.private || (item.private && user)) && (
@@ -278,15 +281,15 @@ const Header = () => {
               )
           )}
           <li
-          
-          className="relative cursor-pointer text-sm px-3 py-2 rounded-full  text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#393053] transition" >
+
+            className="group relative cursor-pointer text-sm px-3 py-2 rounded-full  text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#393053] transition" >
             <span className="flex items-center gap-1">
               <RiArrowDropDownLine className="text-base " />
               Manage Food
             </span>
 
-            <div className="absolute top-10 left-0 w-75 bg-white dark:bg-[#18122B] shadow-md p-2 rounded-md">
-              <ul className="flex flex-col gap-2">
+            <div className=" absolute top-10 left-0 w-50 lg:w-75 group-hover:block hidden  bg-white dark:bg-[#18122B] shadow-md p-2 rounded-md">
+              <ul className="flex flex-col gap-2 ">
                 {
                   manageDropdown.map((item) => (
                     <NavLink

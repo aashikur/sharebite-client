@@ -4,7 +4,7 @@ import RootLayout from "../layouts/RootLayout";
 import Error from "../pages/Error";
 import Home from "../pages/Home";
 import Foods from "../pages/Foods";
-import FoodDetails from "../pages/FoodDetails";
+import FoodDetails from "../pages/fronted/FoodDetails/FoodDetails";
 import AddFood from "../pages/AddFood";
 import ManageFoods from "../pages/ManageFoods";
 import MyRequests from "../pages/MyRequests";
@@ -27,7 +27,7 @@ const mainRoutes = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "foods", element: <Foods /> },
       { path: "contact", element: <Contact /> },
-      { path: "foods/:id", element:<PrivateRoute><FoodDetails /></PrivateRoute> },
+      { path: "foods/:id", element:<div><FoodDetails /></div> },
       { path: "add-food", element: <PrivateRoute><AddFood /></PrivateRoute> },
       { path: "manage-foods", element: <PrivateRoute><ManageFoods /></PrivateRoute> },
       { path: "my-requests", element: <PrivateRoute><MyRequests /></PrivateRoute> },

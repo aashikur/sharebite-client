@@ -2,7 +2,7 @@ import axios from "axios";
 
 const useAxiosSecure = () => {
   const instance = axios.create({
-    baseURL: "https://sharebite-server-opal.vercel.app/", // <-- Your backend API
+    baseURL: import.meta.env.VITE_BASE_URL, // <-- Your backend API
   });
 
   instance.interceptors.request.use((config) => {
