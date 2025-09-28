@@ -1,32 +1,23 @@
 import { useContext, useState, useRef, useEffect } from "react";
 import { CgMenuMotion } from "react-icons/cg";
-import { RiArrowDropDownLine, RiMenuAddLine } from "react-icons/ri";
+import { RiMenuAddLine } from "react-icons/ri";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../providers/AuthProvider";
 import ToggleLightDark from "../ui/ToggleLightDark";
 import HeaderLoading from "../loading/HeaderLoading";
-import { ArrowDownIcon, Search } from "lucide-react";
 
 const menu = [
   { name: "Home", path: "/" },
+  // { name: "Apps", path: "/foods" },
   { name: "Available Foods", path: "/foods" },
-  { name: "Leaderboard", path: "/leaderboard" }, // New
-  { name: "Contact", path: "/contact" },
-  { name: "Contributor", path: "/contributor" },
-
-];
-
-const manageDropdown = [
   { name: "Add Food", path: "/add-food", private: true },
   { name: "Manage My Foods", path: "/manage-foods", private: true },
   { name: "My Food Requests", path: "/my-requests", private: true },
-  { name: "Badges", path: "/badges", private: true }, // New
-  { name: "Chat", path: "/chat", private: true }, // New
-  { name: "AI Suggestions", path: "/ai-suggestions", private: true }, // New
+  { name: "Contact", path: "/contact" },
+  { name: "Contributor", path: "/contributor" },
+];
 
-]
-
-const Header = () => {
+const Header0 = () => {
   const { user, logOut, loading } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
@@ -44,18 +35,17 @@ const Header = () => {
   }, []);
 
   if (loading) {
-    return <HeaderLoading />
-  }
+    return  <HeaderLoading/>  
+     }
 
   return (
     <nav className="bg-white dark:bg-[#18122B] shadow-md sticky top-0 z-50 transition-colors duration-300">
       {user && (
-        <p className="hidden text-center text-white bg-gradient-to-r from-orange-500 to-pink-500 py-2">
+        <p className="text-center text-white bg-gradient-to-r from-orange-500 to-pink-500 py-2">
           Welcome, {user?.displayName || user?.name || "User"}!
         </p>
       )}
-      {/* First nav col  */}
-      <div className="max-w-6xl mx-auto px-4 py-2 flex justify-between items-center relative">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center relative">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <img src="/logo.png" alt="ShareBite Logo" className="w-10 h-10 rounded-full shadow" />
@@ -66,14 +56,22 @@ const Header = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex items-center gap-6">
-
-          <li>
-            <Search className="w-5 h-5 text-[#18122B] dark:text-white" />
-          </li>
-
           <li>
             <span><ToggleLightDark /></span>
           </li>
+          {menu.map(
+            (item) =>
+              (!item.private || (item.private && user)) && (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  className="px-3 py-2 rounded-full font-medium text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#393053] transition"
+                  
+                >
+                  {item.name}
+                </NavLink>
+              )
+          )}
           {user ? (
             <div className="relative" ref={profileRef}>
               <img
@@ -86,7 +84,6 @@ const Header = () => {
                 className="w-10 h-10 rounded-full cursor-pointer border-2 border-orange-500"
                 onClick={() => setShowProfileDropdown((prev) => !prev)}
               />
-              {/* profile click dropdown */}
               {showProfileDropdown && (
                 <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-[#393053] rounded-xl shadow-lg py-2 z-50">
                   <Link
@@ -94,42 +91,7 @@ const Header = () => {
                     className="block px-4 py-2 text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
                     onClick={() => setShowProfileDropdown(false)}
                   >
-                    👤 Profile
-                  </Link>
-                  <Link
-                    to="/my-requests"
-                    className="block px-4 py-2 text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
-                    onClick={() => setShowProfileDropdown(false)}
-                  >
-                    🍴 My Requests
-                  </Link>
-                  <Link
-                    to="/manage-foods"
-                    className="block px-4 py-2 text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
-                    onClick={() => setShowProfileDropdown(false)}
-                  >
-                    📦 Manage Foods
-                  </Link>
-                  <Link
-                    to="/badges"
-                    className="block px-4 py-2 text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
-                    onClick={() => setShowProfileDropdown(false)}
-                  >
-                    🏅 Badges
-                  </Link>
-                  <Link
-                    to="/chat"
-                    className="block px-4 py-2 text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
-                    onClick={() => setShowProfileDropdown(false)}
-                  >
-                    💬 Chat
-                  </Link>
-                  <Link
-                    to="/ai-suggestions"
-                    className="block px-4 py-2 text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
-                    onClick={() => setShowProfileDropdown(false)}
-                  >
-                    🤖 AI Suggestions
+                    Profile
                   </Link>
                   <button
                     className="block w-full text-left px-4 py-2 text-red-500 hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
@@ -138,7 +100,7 @@ const Header = () => {
                       setShowProfileDropdown(false);
                     }}
                   >
-                    🚪 Logout
+                    Logout
                   </button>
                 </div>
               )}
@@ -253,62 +215,9 @@ const Header = () => {
             <div className="flex-1" onClick={() => setIsMenuOpen(false)}></div>
           </div>
         )}
-
       </div>
-      {/* Menu Separator */}
-      <hr className="border-t border-gray-200 dark:border-gray-700" />
-
-
-      {/* First nav col  */}
-      <div className="max-w-6xl mx-auto px-4 py-2 flex justify-between items-center relative">
-
-        {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center gap-4">
-          {menu.map(
-            (item) =>
-              (!item.private || (item.private && user)) && (
-                <NavLink
-                  key={item.path}
-                  to={item.path}
-                  className="text-sm px-3 py-2 rounded-full  text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#393053] transition"
-
-                >
-                  {item.name}
-                </NavLink>
-              )
-          )}
-          <li
-          
-          className="relative cursor-pointer text-sm px-3 py-2 rounded-full  text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#393053] transition" >
-            <span className="flex items-center gap-1">
-              <RiArrowDropDownLine className="text-base " />
-              Manage Food
-            </span>
-
-            <div className="absolute top-10 left-0 w-75 bg-white dark:bg-[#18122B] shadow-md p-2 rounded-md">
-              <ul className="flex flex-col gap-2">
-                {
-                  manageDropdown.map((item) => (
-                    <NavLink
-                      key={item.path}
-                      to={item.path}
-                      className="
-                      border-b border-gray-200 dark:border-gray-700 
-                      text-sm px-3 py-2  text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#393053] transition"
-                    >
-                      {item.name}
-                    </NavLink>
-                  ))
-                }
-              </ul>
-            </div>
-          </li>
-        </ul>
-
-      </div>
-
     </nav>
   );
 };
 
-export default Header;
+export default Header0;
