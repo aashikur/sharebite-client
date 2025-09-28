@@ -43,34 +43,43 @@ const FoodDetails = () => {
   }
 
   return (
-    <div className="bg-white dark:bg-[#18122B] min-h-screen py-12 transition-colors duration-300">
+    <div className="bg-white dark:bg-[#18122B] min-h-screen py-12 transition-colors duration-300 ">
       <Helmet>
         <title>{food.name} | ShareBite</title>
       </Helmet>
 
       {/* container applied here */}
       <div className="container mx-auto px-4">
-        <div className="bg-white dark:bg-[#393053] rounded-3xl shadow-lg p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Left Column - Image */}
-          <div className="flex justify-center">
+        <div className="bg-white dark:bg-[#393053] rounded-3xl  shadow-lg p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          {/* Left Column - Big Image */}
+          <div>
             <img
               src={food.image}
               alt={food.name}
-              className="w-full md:w-96 h-72 object-cover rounded-xl"
+              className="w-full h-[400px] object-cover rounded-2xl"
             />
           </div>
 
-          {/* Right Column - Details */}
+          {/* Right Column - Compact Details */}
           <div className="space-y-3">
             <h2 className="text-3xl font-bold text-[#18122B] dark:text-white">
               {food.name}
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
-              <span className="font-semibold">Quantity:</span> {food.quantity}
-            </p>
-            <p className="text-gray-600 dark:text-gray-300">
               <span className="font-semibold">Pickup Location:</span>{" "}
               {food.pickupLocation}
+            </p>
+
+            {/* Request Button placed earlier */}
+            <button
+              onClick={handleRequest}
+              className="mt-3 mb-5 px-6 py-2 rounded-full bg-orange-500 text-white font-semibold shadow hover:bg-orange-600 transition"
+            >
+              Request This Food
+            </button>
+
+            <p className="text-gray-600 dark:text-gray-300">
+              <span className="font-semibold">Quantity:</span> {food.quantity}
             </p>
             <p className="text-gray-600 dark:text-gray-300">
               <span className="font-semibold">Expires:</span>{" "}
@@ -78,11 +87,11 @@ const FoodDetails = () => {
             </p>
             <p className="text-gray-600 dark:text-gray-300">
               <span className="font-semibold">Notes:</span>{" "}
-              {food.additionalNotes}
+              {food.additionalNotes || "No notes provided"}
             </p>
 
             {/* Donor Info */}
-            <div className="flex items-center gap-3 mt-4">
+            <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
               <img
                 src={food?.donor?.photoURL ? food.donor.photoURL : fallbackPhoto}
                 alt={food.donor.name}
@@ -92,13 +101,6 @@ const FoodDetails = () => {
                 Donor: {food.donor.name}
               </span>
             </div>
-
-            <button
-              onClick={handleRequest}
-              className="mt-6 px-6 py-2 rounded-full bg-orange-500 text-white font-semibold shadow hover:bg-orange-600 transition"
-            >
-              Request This Food
-            </button>
           </div>
         </div>
       </div>
