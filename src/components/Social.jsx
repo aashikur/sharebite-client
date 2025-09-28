@@ -21,7 +21,7 @@ const Social = ({ location, navigate }) => {
         text: `Welcome, ${user.displayName || "User"}!`,
         confirmButtonColor: "#f97316",
       }).then(() => {
-        navigate(location?.state || "/");
+        // navigate(location?.state || "/");
       });
     } catch (error) {
       console.error("Google Sign-in Error:", error);

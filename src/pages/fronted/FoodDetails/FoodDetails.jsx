@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import RequestModal from "./RequestModal";
+import LoginLightBox from "@/components/LoginLightBox";
 
 const fallbackPhoto =
   "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541";
@@ -17,6 +18,7 @@ const FoodDetails = () => {
   const [showModal, setShowModal] = useState(false);
   const [additionalNotes, setAdditionalNotes] = useState("");
   const axiosSecure = useAxiosSecure();
+  const [isLightBoxOpen, setIsLightBoxOpen] = useState(false);
 
   useEffect(() => {
     axiosSecure
@@ -27,8 +29,10 @@ const FoodDetails = () => {
 
   const handleRequest = () => {
     if (!user) {
-      Swal.fire("Login Required", "Please login to request food.", "warning");
-      navigate("/login");
+      // Swal.fire("Login Required", "Please login to request food.", "warning");
+      // navigate("/login");
+      setIsLightBoxOpen(true);
+
       return;
     }
     setShowModal(true);
@@ -115,6 +119,15 @@ const FoodDetails = () => {
           setShowModal={setShowModal}
         />
       )}
+
+
+      {/* Login Box if User Not Logged. */}
+      {isLightBoxOpen && <div className="p-10 absolute top-0 left-0 bg-black/10 backdrop-blur-xs w-full h-full">
+       <div> 
+         <LoginLightBox setIsLightBoxOpen={setIsLightBoxOpen}/>
+       </div>
+      </div>}
+
     </div>
   );
 };

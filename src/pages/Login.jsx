@@ -1,11 +1,11 @@
 import Lottie from "lottie-react";
 import { useContext } from "react";
 import { BiEnvelope, BiKey } from "react-icons/bi";
-import Social from "../components/Social";
-import Title from "../components/Title";
-import { AuthContext } from "../providers/AuthProvider";
+import Social from "@/components/Social";
+import Title from "@/components/Title";
+import { AuthContext } from "@/providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router";
-import loginAnimation from "../assets/loginAnimation.json";
+import loginAnimation from "@/assets/loginAnimation.json";
 import Swal from "sweetalert2";
 
 const Login = () => {
