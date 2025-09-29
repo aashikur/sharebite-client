@@ -17,7 +17,7 @@ const RequestModal = ({
       foodId: food._id,
       foodName: food.name,
       foodImage: food.image,
-      donorEmail: food.donor.email,
+      donorEmail: food.donor.email || "",
       donorName: food.donor.name,
       requesterEmail: user.email,
       requesterName: user.displayName || user.name,
@@ -101,7 +101,7 @@ const RequestModal = ({
             <label className="font-semibold">Your Email:</label>
             <input
               type="text"
-              value={user.email}
+              value={user?.email}
               readOnly
               className="input w-full mt-1 bg-gray-100 dark:bg-[#2d2544] cursor-not-allowed"
             />

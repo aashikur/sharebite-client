@@ -31,9 +31,9 @@ const FoodDetails = () => {
     if (!user) {
       // Swal.fire("Login Required", "Please login to request food.", "warning");
       // navigate("/login");
-      setIsLightBoxOpen(true);
+      // setIsLightBoxOpen(true);
 
-      return;
+      // return;
     }
     setShowModal(true);
   };

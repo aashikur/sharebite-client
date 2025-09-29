@@ -9,16 +9,18 @@ import loginAnimation from "@/assets/loginAnimation.json";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, user} = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+    if(user?.email) return navigate(location.state || "/");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const pass = form.pass.value;
-
+    
     signIn(email, pass)
       .then((res) => {
         Swal.fire({

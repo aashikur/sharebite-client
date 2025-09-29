@@ -8,17 +8,19 @@ import bannerAnimation from "../assets/cooking.json";
 import { motion } from "framer-motion";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import { useNavigate } from "react-router";
 const AddFood = () => {
   const { user } = useContext(AuthContext);
   const queryClient = useQueryClient();
   const axiosSecure = useAxiosSecure();
-  
+  const Navigation = useNavigate();
   // Mutation for adding food
   const mutation = useMutation({
     mutationFn: (food) => axiosSecure.post("/foods", food),
     onSuccess: () => {
       Swal.fire("Success!", "Food added successfully!", "success");
       queryClient.invalidateQueries({ queryKey: ["foods"] }); // Refetch foods list
+      Navigation('/manage-foods');
     },
     onError: () => {
       Swal.fire("Error", "Could not add food.", "error");
