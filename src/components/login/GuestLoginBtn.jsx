@@ -33,7 +33,7 @@ const GuestLoginBtn = () => {
     <button
       type="button"
       onClick={handleGuestLogin}
-      className="mt-6 text-sm w-full border-2 border-orange-500 text-orange-500 font-semibold py-2 rounded-full hover:bg-orange-50 dark:hover:bg-[#393053] transition"
+      className="mt-6 text-sm  text-left border-orange-500 text-orange-500 font-semibold py-2 rounded-full hover:bg-orange-50 dark:hover:bg-[#393053] transition underline cursor-pointer px-2 inline-block"
     >
       Login as Guest
     </button>

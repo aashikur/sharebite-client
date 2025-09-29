@@ -9,6 +9,7 @@ import { useLocation, useNavigate } from "react-router";
 import loginAnimation from "@/assets/loginAnimation.json";
 import Swal from "sweetalert2";
 import { AuthContext } from '@/providers/AuthProvider';
+import GuestLoginBtn from './GuestLoginBtn';
 
 
 const LoginLightBox = ({setIsLightBoxOpen}) => {
@@ -66,6 +67,8 @@ useEffect(() => {
         {/* Login Form */}
         <div className="flex-1 p-8">
           <Title>Login Now</Title>
+          <GuestLoginBtn/> 
+
           <form
             onSubmit={handleSubmit}
             className="flex flex-col gap-6 mt-6"

@@ -10,7 +10,9 @@ import { ArrowDownIcon, Search } from "lucide-react";
 const menu = [
   { name: "Home", path: "/" },
   { name: "Available Foods", path: "/foods" },
-  { name: "Leaderboard", path: "/leaderboard" }, // New
+  { name: "Add Food", path: "/add-food" },
+
+  // { name: "Leaderboard", path: "/leaderboard" }, // New
   { name: "Contact", path: "/contact" },
   { name: "Contributor", path: "/contributor" },
   { name: "Chat", path: "/chat", private: true }, // New
@@ -22,9 +24,9 @@ const manageDropdown = [
   { name: "Add Food", path: "/add-food", private: true },
   { name: "Manage My Foods", path: "/manage-foods", private: true },
   { name: "My Food Requests", path: "/my-requests", private: true },
-  { name: "Badges", path: "/badges", private: true }, // New
-  { name: "Chat", path: "/chat", private: true }, // New
-  { name: "AI Suggestions", path: "/ai-suggestions", private: true }, // New
+  // { name: "Badges", path: "/badges", private: true }, // New
+  // { name: "Chat", path: "/chat", private: true }, // New
+  // { name: "AI Suggestions", path: "/ai-suggestions", private: true }, // New
 
 ]
 
