@@ -1,6 +1,6 @@
 // components/Social.jsx
 import { FcGoogle } from "react-icons/fc";
-import { AuthContext } from "../providers/AuthProvider";
+import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
 import Swal from "sweetalert2";
 

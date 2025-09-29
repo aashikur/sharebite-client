@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { BiEnvelope, BiImageAdd, BiKey, BiUser } from "react-icons/bi";
 import { useNavigate } from "react-router";
 import happy from "../assets/happy.json";
-import Social from "../components/Social";
+import Social from "../components/login/Social";
 import Title from "../components/Title";
 import { AuthContext } from "../providers/AuthProvider";
 import { Helmet } from "react-helmet";

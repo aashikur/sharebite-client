@@ -1,12 +1,13 @@
 import Lottie from "lottie-react";
 import { useContext } from "react";
 import { BiEnvelope, BiKey } from "react-icons/bi";
-import Social from "@/components/Social";
+import Social from "@/components/login/Social";
 import Title from "@/components/Title";
 import { AuthContext } from "@/providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router";
 import loginAnimation from "@/assets/loginAnimation.json";
 import Swal from "sweetalert2";
+import GuestLoginBtn from "@/components/login/GuestLoginBtn";
 
 const Login = () => {
   const { signIn, user} = useContext(AuthContext);
@@ -52,6 +53,7 @@ const Login = () => {
         {/* Login Form */}
         <div className="flex-1 p-8">
           <Title>Login Now</Title>
+          <GuestLoginBtn/>
           <form
             onSubmit={handleSubmit}
             className="flex flex-col gap-6 mt-6"

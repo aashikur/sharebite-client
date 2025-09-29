@@ -3,7 +3,7 @@ import { CgClose } from 'react-icons/cg';
 import Lottie from "lottie-react";
 import { useContext } from "react";
 import { BiEnvelope, BiKey } from "react-icons/bi";
-import Social from "@/components/Social";
+import Social from "@/components/login/Social";
 import Title from "@/components/Title";
 import { useLocation, useNavigate } from "react-router";
 import loginAnimation from "@/assets/loginAnimation.json";

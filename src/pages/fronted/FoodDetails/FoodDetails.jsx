@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import RequestModal from "./RequestModal";
-import LoginLightBox from "@/components/LoginLightBox";
+import LoginLightBox from "@/components/login/LoginLightBox";
 
 const fallbackPhoto =
   "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541";

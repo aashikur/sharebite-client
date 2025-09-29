@@ -13,6 +13,8 @@ const menu = [
   { name: "Leaderboard", path: "/leaderboard" }, // New
   { name: "Contact", path: "/contact" },
   { name: "Contributor", path: "/contributor" },
+  { name: "Chat", path: "/chat", private: true }, // New
+
 
 ];
 
