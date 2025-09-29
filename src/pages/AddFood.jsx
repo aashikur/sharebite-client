@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
@@ -8,12 +8,14 @@ import { motion } from "framer-motion";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { useNavigate } from "react-router";
+import LoginLightBox from "@/components/login/LoginLightBox";
 
 const AddFood = () => {
   const { user } = useContext(AuthContext);
   const queryClient = useQueryClient();
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
+  const [isLightBoxOpen, setIsLightBoxOpen] = useState(false);
 
   const mutation = useMutation({
     mutationFn: (food) => axiosSecure.post("/foods", food),
@@ -29,6 +31,10 @@ const AddFood = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!user) return setIsLightBoxOpen(true);
+
+
     const form = e.target;
     const food = {
       name: form.name.value,
@@ -159,6 +165,19 @@ const AddFood = () => {
           </div>
         </motion.div>
       </div>
+
+
+
+
+      {/* Login Box if User Not Logged. */}
+      {isLightBoxOpen && <div className="p-10 z-100 absolute top-0 left-0 bg-black/10 backdrop-blur-xs w-full h-full">
+       <div> 
+         <LoginLightBox setIsLightBoxOpen={setIsLightBoxOpen}/>
+       </div>
+      </div>}
+
+
+
     </div>
   );
 };
