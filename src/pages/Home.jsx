@@ -11,6 +11,7 @@ import Loading from "./Loading";
 import CustomerReview from "../test/CustomerReview";
 import Dropdown from "@/components/ui/DropDown";
 import Pricing2 from "@/components/ui/PricingTable";
+import ScrollToTopBtn from "@/components/ui/ScrollToTopBtn";
 
 const Home = () => {
 
@@ -53,6 +54,7 @@ const Home = () => {
 
       {/* Footer */}
       {/* <Footer /> */}
+      <ScrollToTopBtn/>
     </div>
   );
 };
