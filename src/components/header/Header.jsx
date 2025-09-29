@@ -15,7 +15,7 @@ const menu = [
   // { name: "Leaderboard", path: "/leaderboard" }, // New
   { name: "Contact", path: "/contact" },
   { name: "Contributor", path: "/contributor" },
-  { name: "Chat", path: "/chat", private: true }, // New
+  { name: "Chat", path: "/contact", private: true }, // New
 
 
 ];
@@ -95,49 +95,49 @@ const Header = () => {
               />
               {/* profile click dropdown */}
               {showProfileDropdown && (
-                <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-[#393053] rounded-xl shadow-lg py-2 z-50">
+                <div className="absolute right-0 mt-2 w-50 bg-white dark:bg-[#393053] rounded-xl shadow-lg py-2 z-50">
                   <Link
                     to="/profile"
                     className="block px-4 py-2 text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
                     onClick={() => setShowProfileDropdown(false)}
                   >
-                    👤 Profile
+                    Profile
                   </Link>
                   <Link
                     to="/my-requests"
                     className="block px-4 py-2 text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
                     onClick={() => setShowProfileDropdown(false)}
                   >
-                    🍴 My Requests
+                    My Requests
                   </Link>
                   <Link
                     to="/manage-foods"
                     className="block px-4 py-2 text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
                     onClick={() => setShowProfileDropdown(false)}
                   >
-                    📦 Manage Foods
+                   Manage Foods
                   </Link>
-                  <Link
+                  {/* <Link
                     to="/badges"
                     className="block px-4 py-2 text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
                     onClick={() => setShowProfileDropdown(false)}
                   >
                     🏅 Badges
-                  </Link>
-                  <Link
+                  </Link> */}
+                  {/* <Link
                     to="/chat"
                     className="block px-4 py-2 text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
                     onClick={() => setShowProfileDropdown(false)}
                   >
                     💬 Chat
-                  </Link>
-                  <Link
+                  </Link> */}
+                  {/* <Link
                     to="/ai-suggestions"
                     className="block px-4 py-2 text-[#18122B] dark:text-white hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
                     onClick={() => setShowProfileDropdown(false)}
                   >
-                    🤖 AI Suggestions
-                  </Link>
+                    AI Suggestions
+                  </Link> */}
                   <button
                     className="block w-full text-left px-4 py-2 text-red-500 hover:bg-orange-100 dark:hover:bg-[#18122B] transition"
                     onClick={() => {
@@ -145,7 +145,7 @@ const Header = () => {
                       setShowProfileDropdown(false);
                     }}
                   >
-                    🚪 Logout
+                   Logout
                   </button>
                 </div>
               )}
@@ -186,8 +186,8 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-40 z-50 flex flex-col">
-            <ul className="bg-white dark:bg-[#18122B] w-4/5 max-w-xs h-full p-8 flex flex-col gap-6 shadow-lg absolute right-0 top-0">
+          <div className="fixed inset-0 bg-black/50 bg-opacity-40 z-50 flex flex-col">
+            <ul className="bg-white dark:bg-[#18122B] w-4/5 max-w-xs h-full p-8 flex flex-col gap-6 shadow-lg absolute left-0 top-0">
               <li className="mb-4">
                 <Link to="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
                   <img src="/logo.png" alt="ShareBite Logo" className="w-8 h-8 rounded-full" />
