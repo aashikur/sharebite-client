@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { CgClose } from "react-icons/cg";
 
 const RequestModal = ({
+  setIsLightBoxOpen,
   food,
   user,
   additionalNotes,
@@ -14,6 +15,13 @@ const RequestModal = ({
   const navigate = useNavigate();
 
   const confirmRequest = () => {
+
+    if (!user) {
+      // Swal.fire("Login Required", "Please login to request food.", "warning");
+      setIsLightBoxOpen(true);
+      return;
+    }
+
     const requestData = {
       foodId: food._id,
       foodName: food.name,

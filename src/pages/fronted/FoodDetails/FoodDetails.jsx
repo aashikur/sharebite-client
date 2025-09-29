@@ -112,6 +112,7 @@ const FoodDetails = () => {
       {/* Request Modal */}
       {showModal && (
         <RequestModal
+        setIsLightBoxOpen={setIsLightBoxOpen}
           food={food}
           user={user}
           additionalNotes={additionalNotes}
@@ -122,7 +123,7 @@ const FoodDetails = () => {
 
 
       {/* Login Box if User Not Logged. */}
-      {isLightBoxOpen && <div className="p-10 absolute top-0 left-0 bg-black/10 backdrop-blur-xs w-full h-full">
+      {isLightBoxOpen && <div className="p-10 z-100 absolute top-0 left-0 bg-black/10 backdrop-blur-xs w-full h-full">
        <div> 
          <LoginLightBox setIsLightBoxOpen={setIsLightBoxOpen}/>
        </div>
