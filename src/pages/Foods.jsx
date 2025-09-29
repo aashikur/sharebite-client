@@ -45,7 +45,7 @@ const Foods = () => {
 
   return (
     <div className="bg-white dark:bg-[#18122B] min-h-screen py-12 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-[#18122B] dark:text-white mb-10">
           All Available Foods
         </h2>

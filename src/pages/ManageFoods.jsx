@@ -76,7 +76,7 @@ const ManageFoods = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto py-12">
+    <div className="container mx-auto py-12">
       <Helmet><title>Manage My Foods | ShareBite</title></Helmet>
       <h2 className="text-2xl font-bold mb-6 px-4">Manage My Foods</h2>
       {foods.length === 0 ? (

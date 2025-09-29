@@ -46,7 +46,6 @@ const Home = () => {
 
       {/* Extra Sections */}
       <ExtraSection2 />
-      <ExtraSection1 />
       <Pricing2/>
 
       <CustomerReview/>

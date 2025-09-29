@@ -35,7 +35,7 @@ const cardVariants = {
 };
 
 const HowItWorks = () => (
-  <section className="max-w-6xl mx-auto py-20 my-20 px-12 rounded-4xl bg-gradient-to-br from-orange-100 to-pink-100 dark:from-[#393053] dark:to-[#18122B]">
+  <section className="container mx-auto py-20 my-20 px-12 rounded-4xl bg-gradient-to-br from-orange-100 to-pink-100 dark:from-[#393053] dark:to-[#18122B]">
     <h2 className="text-2xl font-bold text-center mb-8">How to ShareBite</h2>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

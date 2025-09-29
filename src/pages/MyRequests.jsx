@@ -29,7 +29,7 @@ const MyRequests = () => {
       <Helmet>
         <title>My Food Requests | ShareBite</title>
       </Helmet>
-      <div className="max-w-5xl mx-auto px-4">
+      <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-[#18122B] dark:text-white mb-10">
           My Food Requests
         </h2>

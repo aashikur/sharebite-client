@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
 
 const Footer = () => (
   <footer className="bg-[#18122B] dark:bg-[#393053] text-white pt-12 pb-6 mt-12 rounded-t-3xl">
-    <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
       {/* Logo & About */}
       <aside className="flex flex-col items-center md:items-start gap-3">
         <img src="/logo.png" alt="ShareBite Logo" className="w-12 h-12 rounded-full shadow" />

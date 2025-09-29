@@ -36,7 +36,7 @@ const FeaturedFoods = () => {
   const featuredFoods = sortedFoods.slice(0, 6);
 
   return (
-    <section className="max-w-6xl mx-auto py-12 mb-20 ">
+    <section className="container mx-auto py-12 mb-20 ">
       <h2 className="text-2xl text-center py-10 md:text-3xl px-4 font-bold text-[#18122B] dark:text-white">
         Don’t buy it, or bin it, <span className="text-orange-500">ShareBite it!</span>
       </h2>      {/* Controls */}

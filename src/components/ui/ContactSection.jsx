@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function ContactSection() {
   return (
     <section className="w-full py-16 bg-base-100 dark:bg-[#18122B] transition-colors duration-300">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto container px-4">
         <div className="rounded-3xl p-6 sm:p-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
             {/* Left: Form */}

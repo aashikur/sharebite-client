@@ -15,7 +15,7 @@ const textVariants = {
 
 const Banner2 = () => (
   <section className="w-full rounded-b-4xl py-10  bg-gradient-to-br from-orange-100 to-pink-100 dark:from-[#393053] dark:to-[#18122B]">
-    <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between py-12 px-4 gap-8">
+    <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between py-12 px-4 gap-8">
       {/* Animated Text & Buttons */}
       <div className="flex-1 space-y-6 text-center md:text-left">
         {/* Heading with typewriter on "waste less" */}
